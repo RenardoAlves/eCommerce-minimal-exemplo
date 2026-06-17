@@ -7,10 +7,7 @@ const app = express();
 const port = 3000;
 
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://e-commerce-sinform-frontend.vercel.app'
-  ]
+  origin: process.env.FRONTEND_URL
 }));
 
 app.use("/products", productsRoute);
